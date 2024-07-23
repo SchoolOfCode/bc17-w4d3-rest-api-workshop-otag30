@@ -30,6 +30,35 @@ res.json({
 /* Write a request handler to return the correct response when a `GET` request is received to `/astronauts`. Choose the appropriate 
 function from the imported functions at the top of the `app.js` to get your data. */
 
+/*Define the Route Handler
+Add a route handler for the GET request to /astronauts using the getAstronauts function.
+Add the Route Handler:
+Use app.get('/astronauts', async (req, res) => { ... }) to define the route.
+Inside the handler, call getAstronauts to fetch the data.
+Send the response using res.json(). */
+app.get('/astronauts', async (req, res) => {
+  try {
+    const astronauts = await getAstronauts(); //// Fetch data using the helper function
+    res.json({success: true, payload: astronauts}); //Send successful JSON response
+  } catch (error) {
+    res.status(500).json({ success: false, payload: error.message }); // Handle errors
+  }
+}
+)
+/* Start the Server
+To handle incoming requests, we need to start the server by listening on a specific port.*/
+app.listen(3000, () => {
+  console.log("server is running on port 3000");
+}
+)
+/*Testing the Route
+Using Postman:
+Open Postman and create a new GET request.
+Set the URL to http://localhost:3000/astronauts.
+Send the request and verify the response.
+
+
+
 // Task 2
 
 /* Write a request handler to return the correct response and perform the correct action when a `POST` request is received to 

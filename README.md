@@ -29,7 +29,7 @@ Our API will be JSON as a response format, so you'll use the appropriate respons
 
 Good luck! And if in doubt, break it down!
 
-## Ticket 1 - GET Request
+## Ticket 1 - GET Request✅
 
 Write a request handler to return the correct response when a `GET` request is received to `/astronauts`.
 Choose the appropriate function from the imported functions at the top of the `app.js` to get your data.
