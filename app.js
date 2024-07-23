@@ -85,7 +85,14 @@ app.post('/astronauts', async (req, res) => {
 
 /* Write the request handler to return the data from the function getAstronautById. Have this handler listen to requests at the 
 appropriate path. */
-
+app.get('/astronauts/:id', async (req, res) => {//the path includes the :id
+  try {
+    const astronautById = await getAstronautById(req.params.id); // Get the ID from the request parameters and pass it to the function
+    res.json({ success: true, payload: astronautById });// Return the fetched astronaut
+  } catch (error) {
+    res.status(500).json({ success: false, payload: error.message}); // Handle errors
+  }
+})//used astronaut 1113 to retrieve by id and worked in Postman.
 
 
 // Task 4

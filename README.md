@@ -38,7 +38,7 @@ Choose the appropriate function from the imported functions at the top of the `a
 
 Write a request handler to return the correct response and perform the correct action when a `POST` request is received to `/astronauts`. Choose the appropriate function from the imported functions at the top of the `app.js` to perform the action.
 
-## Ticket 3 - GET astronaut by ID
+## Ticket 3 - GET astronaut by ID✅
 
 Write the request handler to return the data from the function getAstronautById. Have this handler listen to requests at the appropriate path.
 
