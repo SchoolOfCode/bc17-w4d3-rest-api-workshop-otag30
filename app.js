@@ -64,10 +64,29 @@ Send the request and verify the response.
 /* Write a request handler to return the correct response and perform the correct action when a `POST` request is received to 
 `/astronauts`. Choose the appropriate function from the imported functions at the top of the `app.js` to perform the action. */
 
+/*Define the Route Handler
+Defines the route handler for the POST request to /astronauts.*/
+app.post('/astronauts', async (req, res) => {
+  try {
+    const newAstronaut = await createAstronaut(req.body); // Pass the request body to the createAstronaut function, Calls the createAstronaut function with the data from the request body.
+    res.status(201).json({ success: true, payload: newAstronaut}); // Send a successful response, Sends a response with a 201 Created status code and the created astronaut data.
+  } catch (error) {
+  res.status(400).json({ success: false, payload: error.message}); //Sends an error response with a 400 Bad Request status code if something goes wrong.
+  }
+ } 
+ )/* {
+    "success": true,
+    "payload": {}
+} someting is wrong */
+
+
+
 // Task 3
 
 /* Write the request handler to return the data from the function getAstronautById. Have this handler listen to requests at the 
 appropriate path. */
+
+
 
 // Task 4
 
