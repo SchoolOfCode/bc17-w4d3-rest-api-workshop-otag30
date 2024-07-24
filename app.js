@@ -74,7 +74,7 @@ app.post('/astronauts', async (req, res) => {
   res.status(400).json({ success: false, payload: error.message}); //Sends an error response with a 400 Bad Request status code if something goes wrong.
   }
  } 
- )/* {
+ )/*response * {
     "success": true,
     "payload": {}
 } someting is wrong */
@@ -99,6 +99,38 @@ app.get('/astronauts/:id', async (req, res) => {//the path includes the :id
 
 /* Write the request handler to perform the action and return the data from the function replaceAstronautById. Have this handler 
 listen to requests at the appropriate path. */
+
+app.put('/astronauts/:id', async (req, res) => {
+  try {
+    const id = req.params.id;
+    const dataToReplace = req.body; // Retrieve the ID from the URL parameters and the replace data from the request body
+    // Call the helper function to update the astronaut by ID
+    const replacedAstronaut = await replaceAstronautById(id, dataToReplace);
+  // Send a success response with the replaced astronaut details
+    res.json({success: true, payload: replacedAstronaut })
+  } catch (error) {
+    //send an error response if the replacement fails
+    res.status(500).json({ success: false, payload: error.message });
+  }
+}
+) /*changed astronaut ID in the body and got this response{
+  "id": "1113",
+  "firstName": "Erik",
+  "lastName": "Vieira",
+  "rank": "Cat",
+  "suitSize": "xs",
+  "helmetSize": "s",
+  "specialSkill": "meowing around and purring",
+  "dob": "2019-12-30",
+  "missions": [
+    {
+      "title": "Apollo 74",
+      "dates": { "start": "2024-07-22", "finish": "2024-07-26" },
+      "extravehicularActivities": 1
+    }
+  ]
+} */
+
 
 // Task 5
 

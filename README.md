@@ -34,7 +34,7 @@ Good luck! And if in doubt, break it down!
 Write a request handler to return the correct response when a `GET` request is received to `/astronauts`.
 Choose the appropriate function from the imported functions at the top of the `app.js` to get your data.
 
-## Ticket 2 - POST request
+## Ticket 2 - POST request😵‍💫
 
 Write a request handler to return the correct response and perform the correct action when a `POST` request is received to `/astronauts`. Choose the appropriate function from the imported functions at the top of the `app.js` to perform the action.
 
@@ -42,7 +42,7 @@ Write a request handler to return the correct response and perform the correct a
 
 Write the request handler to return the data from the function getAstronautById. Have this handler listen to requests at the appropriate path.
 
-## Ticket 4 - PUT astronaut by ID
+## Ticket 4 - PUT astronaut by ID✅
 
 Write the request handler to perform the action and return the data from the function replaceAstronautById. Have this handler listen to requests at the appropriate path.
 
